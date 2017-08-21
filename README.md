@@ -8,10 +8,6 @@ This project is in ReactJS
 
 ### Install Dependencies
 
-We have two kinds of dependencies in this project: tools and framework code. The tools help
-us manage and test the application.
-
-
 We get the tools we depend upon via npm, the [node package manager][npm].
 
 ```
@@ -29,9 +25,19 @@ npm start
 
 Now browse to the app at `http://localhost:3000`.
 
-## Running the tests
+## Running the tests [TODO]
 
-[TODO]
+```
+npm run test
+```
+
+### Build the Application
+
+We build the application for production.
+
+```
+npm run build
+```
 
 ## Authors
 
