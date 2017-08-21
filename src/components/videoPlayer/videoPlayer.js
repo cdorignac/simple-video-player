@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './videoPlayer.css';
 import PlayPause from '../playPause/playPause';
-import FullScreen from '../fullScreen/fullScreen';
 import Sound from '../sound/sound';
 
 class VideoPlayer extends Component {
@@ -49,10 +48,6 @@ class VideoPlayer extends Component {
     });
   }
 
-  handleFullScreen = () => {
-    //TODO
-  }
-
 
 
   render() {
@@ -64,7 +59,6 @@ class VideoPlayer extends Component {
         <div className="video-controls">
           <PlayPause paused={this.state.paused} onClick={this.handlePlayPause} />
           <Sound volume={this.state.volume} onClickMute={this.handleMute}  onChangeVolume={this.handleVolume}/>
-          <FullScreen isInFulscreen={this.state.isInFulscreen} onClick={this.handleFullScreen} />
         </div>
       </div>
     );
