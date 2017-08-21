@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './videoPlayer.css';
 import PlayPause from '../playPause/playPause';
 import FullScreen from '../fullScreen/fullScreen';
+import Sound from '../sound/sound';
 
 class VideoPlayer extends Component {
   constructor(props) {
@@ -29,6 +30,25 @@ class VideoPlayer extends Component {
     }
   }
 
+  handleMute = () => {
+    if(this.state.volume === 0){
+      this.refs.video.volume = 1;
+    }else {
+      this.refs.video.volume = 0;
+    }
+
+    this.setState({
+      volume: this.refs.video.volume
+    });
+  }
+
+  handleVolume = (volume) => {
+    this.refs.video.volume = volume;
+    this.setState({
+      volume: volume
+    });
+  }
+
   handleFullScreen = () => {
     //TODO
   }
@@ -43,6 +63,7 @@ class VideoPlayer extends Component {
         </video>
         <div className="video-controls">
           <PlayPause paused={this.state.paused} onClick={this.handlePlayPause} />
+          <Sound volume={this.state.volume} onClickMute={this.handleMute}  onChangeVolume={this.handleVolume}/>
           <FullScreen isInFulscreen={this.state.isInFulscreen} onClick={this.handleFullScreen} />
         </div>
       </div>
@@ -51,10 +72,3 @@ class VideoPlayer extends Component {
 }
 
 export default VideoPlayer;
-
-/* 
-play/pause
-progress bar 
-sound : volume + mute 
-full screen 
-*/

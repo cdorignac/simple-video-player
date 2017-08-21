@@ -9,7 +9,3 @@
 .video-controls{
 	text-align: left;
 }
-
-.video-controls > div{
-	display: inline-block;
-}

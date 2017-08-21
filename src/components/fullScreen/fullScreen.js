@@ -6,7 +6,7 @@ class FullScreen extends Component {
 
     handleClick = (e) => {
 	    e.preventDefault();
-	    this.props.onClick()
+	    this.props.onClick();
 	}
 
 	render() {
